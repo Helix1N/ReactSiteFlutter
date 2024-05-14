@@ -29,6 +29,7 @@ class _HomeState extends State<Home> {
         _heroSection(),
         _brandsSection(),
         _possibiliesSection(),
+        _futureSection(),
       ]),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -233,7 +234,7 @@ class _HomeState extends State<Home> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 25.0),
+            padding: const EdgeInsets.only(top: 65.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -254,7 +255,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 75,
           ),
         ],
       ),
@@ -313,7 +314,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: GradientText(
-                    text: 'As possibilidades são além da\nsua imaginação',
+                    text: 'As possibilidades são além \nda sua imaginação',
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       fontSize: 20
@@ -376,16 +377,45 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Text(
-                          'Chat de Bots',
+                          'Base de Conhecimentos',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
                               fontSize: 15),
                         ),
-                        Text(
-                          'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod ',
-                          style: TextStyle(color: Colors.white.withOpacity(0.7)),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: Text(
+                            'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod ',
+                            style: TextStyle(color: Colors.white.withOpacity(0.7)),
+                          ),
                         ),
+                        Container(
+                          width: 40,
+                          height: 5,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'Educação',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 15),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 15.0),
+                          child: Text(
+                            'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod ',
+                            style: TextStyle(color: Colors.white.withOpacity(0.7)),
+                          ),
+                        ),
+
                       ],
                     ),
                   ),
@@ -394,6 +424,18 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
+      ),
+    );
+  }
+  Container _futureSection() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFF040C18),
+      ),
+      child: Column(
+        children: [
+          SizedBox(height: 90,),
+        ],
       ),
     );
   }
