@@ -4,11 +4,13 @@ class GradientText extends StatelessWidget {
   final String text;
   final TextStyle style;
   final Gradient gradient;
+  final TextAlign textAlign;
 
   GradientText({
     required this.text,
     required this.style,
     required this.gradient,
+    this.textAlign = TextAlign.start,
   });
 
   @override
@@ -19,7 +21,8 @@ class GradientText extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: style.copyWith(color: Colors.white), // Color is required, but will be overridden by the gradient
+        style: style.copyWith(color: Colors.white),
+        textAlign: textAlign,// Color is required, but will be overridden by the gradient
       ),
     );
   }

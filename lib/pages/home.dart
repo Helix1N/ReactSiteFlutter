@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import '../custom_widgets/gradient_text.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key, required this.title});
@@ -33,6 +34,8 @@ class _HomeState extends State<Home> {
         _futureSection(),
         _googlyEyesSection(),
         _gradientBoxSection(),
+        _blogSection(),
+        _footerSection(),
       ]), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
@@ -75,8 +78,8 @@ class _HomeState extends State<Home> {
               'Login',
               style: TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.w400,
-                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                fontSize: 17,
               ),
             ),
           ),
@@ -94,7 +97,7 @@ class _HomeState extends State<Home> {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
@@ -125,8 +128,8 @@ class _HomeState extends State<Home> {
             child: GradientText(
               text: 'Vamos construir algo \nincrível com GPT-3 OpenAI',
               style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 25,
+                fontWeight: FontWeight.w800,
+                fontSize: 27,
                 color: Colors.white,
               ),
               gradient: LinearGradient(
@@ -153,6 +156,9 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     child: TextField(
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(10),
                           filled: true,
@@ -198,12 +204,13 @@ class _HomeState extends State<Home> {
             height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 40.0),
-            child: Row(
+            padding: const EdgeInsets.only(left: 35.0, top: 0.0, bottom: 10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
                   'assets/images/people.png',
-                  height: 30,
+                  width: 200,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
@@ -280,7 +287,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left: 25.0, top: 25.0),
+            padding: const EdgeInsets.only(left: 25.0, top: 25.0,right: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -312,7 +319,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: GradientText(
-                    text: 'As possibilidades são além \nda sua imaginação',
+                    text: 'As possibilidades são além da sua imaginação',
                     style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
                     gradient: LinearGradient(
                       colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
@@ -440,7 +447,7 @@ class _HomeState extends State<Home> {
             ),
             GradientText(
               text:
-                  'O Futuro É Agora, Você Só\nPrecisa Perceber. Entre no\nFuturo Agora e Faça Acontecer.',
+              'O Futuro É Agora, Você Só\nPrecisa Perceber. Entre no\nFuturo Agora e Faça Acontecer.',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w800,
@@ -462,188 +469,76 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 40,
-                      height: 5,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'Melhoras acabam\ncom falta de\nconfiança',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14),
-                    )
-                  ],
-                ),
-                Container(
-                  width: 202,
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(top: 5, left: 30.0, right: 20.0),
-                    child: Text(
-                      'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
-                      style: TextStyle(
-                        color: Color(0xFF7DAAD6),
-                      ),
-                      softWrap: true,
-                    ),
-                  ),
-                ),
-              ],
+            buildInfoRow(
+              'Melhoras acabam\ncom falta de\nconfiança',
+              'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor',
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 5,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        'Torne-se mais ativo\ne produtivo',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14),
-                      )
-                    ],
-                  ),
-                  Container(
-                    width: 202,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, left: 30.0, right: 20.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
-                        style: TextStyle(
-                          color: Color(0xFF7DAAD6),
-                        ),
-                        softWrap: true,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            buildInfoRow(
+              'Torne-se mais ativo\ne produtivo',
+              'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor',
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 5,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        'Mais velocidade e\nmelhores\nconstruções',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14),
-                      )
-                    ],
-                  ),
-                  Container(
-                    width: 202,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, left: 30.0, right: 20.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
-                        style: TextStyle(
-                          color: Color(0xFF7DAAD6),
-                        ),
-                        softWrap: true,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            buildInfoRow(
+              'Mais velocidade e\nmelhores\nconstruções',
+              'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor',
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 5,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        'Mensagens\ndinâmicas com a\nequipe',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14),
-                      )
-                    ],
-                  ),
-                  Container(
-                    width: 202,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, left: 30.0, right: 20.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
-                        style: TextStyle(
-                          color: Color(0xFF7DAAD6),
-                        ),
-                        softWrap: true,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            buildInfoRow(
+              'Mensagens\ndinâmicas com a\nequipe',
+              'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor',
             ),
           ],
         ),
       ),
     );
   }
+
+  Widget buildInfoRow(String title, String description) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 120,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 40,
+                  height: 5,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  title,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(width: 20),
+          Flexible(
+            child: Text(
+              description,
+              style: TextStyle(
+                color: Color(0xFF7DAAD6),
+              ),
+              softWrap: true,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 
   Container _googlyEyesSection() {
     return Container(
@@ -771,6 +666,333 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+  Container _blogSection() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFF040C18),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          children: [
+            GradientText(text:'Muito está acontecendo, estamos conversando sobre',
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 25,
+                ),
+                gradient: LinearGradient(
+                  colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 40.0,bottom: 15),
+              child: Column(
+                    children: [
+                      Image.asset('assets/images/blog02.png'),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF031B34),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('May 2, 2024',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14
+                                ),),
+                                Text(
+                                  'GPT-3 e Open AI são o futuro. Vamos explorar, que tal?',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 19,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 50,),
+                                Text(
+                                    'Leia Artigo Completo',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                    ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Image.asset('assets/images/blog01.png',),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF031B34),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('May 2, 2024',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14
+                                  ),),
+                                Text(
+                                  'GPT-3 e Open AI são o futuro. Vamos explorar, que tal?',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 19,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 50,),
+                                Text(
+                                  'Leia Artigo Completo',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Image.asset('assets/images/blog03.png',),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF031B34),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('May 2, 2024',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14
+                                  ),),
+                                Text(
+                                  'GPT-3 e Open AI são o futuro. Vamos explorar, que tal?',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 19,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 50,),
+                                Text(
+                                  'Leia Artigo Completo',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+  Container _footerSection() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFF031B34),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          children: [
+            GradientText(text: 'Você quer entrar no\nfuturo antes dos outros?',
+                style: TextStyle(
+                  fontSize: 27,
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.center,
+                gradient: LinearGradient(
+                  colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 25.0,bottom: 50),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2,
+                  )
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15.0, bottom: 15, left: 15, right: 15),
+                  child: Text(
+                    'Peça o Early Access',style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SvgPicture.asset('assets/images/logo.svg'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15.0, bottom: 20),
+                    child: Text('Crechterwoord K12 182 DK Alknjkcb,\nAll Rights Reserved',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.7),
+                    )),
+                  ),
+                  Text(
+                      'Links',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Overons',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Social Media',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Counters',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Contact',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Text(
+                        'Company',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Terms & Conditions',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Privacy Policy',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Contact',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Text(
+                        'Get in Touch',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'Crechterwoord K12 182 DK Alknjkcb',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        '085-132567',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                    child: Text(
+                        'info@payme.net',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                        )),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30.0),
+              child: Text('@ 2024 GPT-3. All rights reserved.',
+              style: TextStyle(
+                color: Colors.white
+              ),),
+            )
+          ],
         ),
       ),
     );
