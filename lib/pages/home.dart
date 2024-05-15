@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import '../custom_widgets/gradient_text.dart';
 
 class Home extends StatefulWidget {
@@ -30,12 +31,9 @@ class _HomeState extends State<Home> {
         _brandsSection(),
         _possibiliesSection(),
         _futureSection(),
-      ]),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        _googlyEyesSection(),
+        _gradientBoxSection(),
+      ]), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
@@ -302,7 +300,7 @@ class _HomeState extends State<Home> {
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w700,
-                  fontSize: 15),
+                      fontSize: 15),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 20.0),
@@ -315,10 +313,7 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: GradientText(
                     text: 'As possibilidades são além \nda sua imaginação',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 20
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
                     gradient: LinearGradient(
                       colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
                       begin: Alignment.centerLeft,
@@ -330,8 +325,8 @@ class _HomeState extends State<Home> {
                   'Explore a livraria',
                   style: TextStyle(
                     color: Colors.orange,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
                   ),
                 ),
                 Padding(
@@ -362,7 +357,8 @@ class _HomeState extends State<Home> {
                           padding: const EdgeInsets.only(bottom: 20.0),
                           child: Text(
                             'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod ',
-                            style: TextStyle(color: Colors.white.withOpacity(0.7)),
+                            style:
+                                TextStyle(color: Colors.white.withOpacity(0.7)),
                           ),
                         ),
                         Container(
@@ -387,7 +383,8 @@ class _HomeState extends State<Home> {
                           padding: const EdgeInsets.only(bottom: 20.0),
                           child: Text(
                             'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod ',
-                            style: TextStyle(color: Colors.white.withOpacity(0.7)),
+                            style:
+                                TextStyle(color: Colors.white.withOpacity(0.7)),
                           ),
                         ),
                         Container(
@@ -412,10 +409,10 @@ class _HomeState extends State<Home> {
                           padding: const EdgeInsets.only(bottom: 15.0),
                           child: Text(
                             'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod ',
-                            style: TextStyle(color: Colors.white.withOpacity(0.7)),
+                            style:
+                                TextStyle(color: Colors.white.withOpacity(0.7)),
                           ),
                         ),
-
                       ],
                     ),
                   ),
@@ -427,15 +424,354 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
   Container _futureSection() {
     return Container(
       decoration: BoxDecoration(
         color: Color(0xFF040C18),
       ),
-      child: Column(
-        children: [
-          SizedBox(height: 90,),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 90,
+            ),
+            GradientText(
+              text:
+                  'O Futuro É Agora, Você Só\nPrecisa Perceber. Entre no\nFuturo Agora e Faça Acontecer.',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w800,
+              ),
+              gradient: LinearGradient(
+                colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0, bottom: 30.0),
+              child: Text(
+                'Peça o Early Access para Começar',
+                style: TextStyle(
+                  color: Colors.orange,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 5,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Melhoras acabam\ncom falta de\nconfiança',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14),
+                    )
+                  ],
+                ),
+                Container(
+                  width: 202,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 5, left: 30.0, right: 20.0),
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
+                      style: TextStyle(
+                        color: Color(0xFF7DAAD6),
+                      ),
+                      softWrap: true,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Torne-se mais ativo\ne produtivo',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14),
+                      )
+                    ],
+                  ),
+                  Container(
+                    width: 202,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, left: 30.0, right: 20.0),
+                      child: Text(
+                        'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
+                        style: TextStyle(
+                          color: Color(0xFF7DAAD6),
+                        ),
+                        softWrap: true,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Mais velocidade e\nmelhores\nconstruções',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14),
+                      )
+                    ],
+                  ),
+                  Container(
+                    width: 202,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, left: 30.0, right: 20.0),
+                      child: Text(
+                        'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
+                        style: TextStyle(
+                          color: Color(0xFF7DAAD6),
+                        ),
+                        softWrap: true,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Mensagens\ndinâmicas com a\nequipe',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14),
+                      )
+                    ],
+                  ),
+                  Container(
+                    width: 202,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 5, left: 30.0, right: 20.0),
+                      child: Text(
+                        'Lorem ipsum dolor sit amet, consecteturadipi elit, sed do eiusmod tempor ',
+                        style: TextStyle(
+                          color: Color(0xFF7DAAD6),
+                        ),
+                        softWrap: true,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _googlyEyesSection() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFF040C18),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 80,
+            ),
+            Image.asset('assets/images/possibility.png'),
+            SizedBox(
+              height: 35,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: Text(
+                'Peça o Early Access para Começar',
+                style: TextStyle(
+                    color: Color(0xFF7DAAD6),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            GradientText(
+              text: 'As possibilidades são\nalém da sua imaginação',
+              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 25),
+              gradient: LinearGradient(
+                colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+              child: Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m',
+                style: TextStyle(
+                  color: Color(0xFF7DAAD6),
+                ),
+              ),
+            ),
+            Text(
+              'Peça o Early Access para Começar',
+              style: TextStyle(
+                color: Colors.orange,
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _gradientBoxSection() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFF040C18),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            gradient: LinearGradient(
+              colors: [Color(0xFFAE67FA), Color(0xFFF49867)],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 40.0, bottom: 40, left: 40.0, right: 40.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Peça o Early Access para Começar',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                ),
+                ),
+                Text('Resgistre-se hoje & começe explorando as infinitas possibilidades',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+
+                ),),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 25.0, bottom: 10.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border(
+                          top: BorderSide(
+                            color: Colors.white,
+                            width: 2,
+                          ),
+                          left: BorderSide(
+                            color: Colors.white,
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 15.0, bottom: 15, right: 40, left: 40),
+                        child: Text('Começar',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+
+                        ),),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
