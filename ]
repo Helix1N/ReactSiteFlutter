@@ -1,0 +1,119 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import '../pages/home.dart';
+
+class Game extends StatefulWidget {
+  const Game({super.key});
+
+  @override
+  State<Game> createState() => _GameState();
+}
+
+class _GameState extends State<Game> {
+  int? varTest;
+
+  void _funcTest() {}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const Home(
+                          title: "home",
+                        )));
+          },
+          child: Container(
+            child: Text('Go Back'),
+          ),
+        ),
+        title: Container(
+          child: Text('Kill The Space Lizards'),
+        ),
+      ),
+      body: Container(
+          child: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(20),
+        crossAxisCount: 6,
+        children: <Widget>[
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[200],
+            child: const Text('Heed not the rabble'),
+          ),
+          Container(
+            color: Colors.teal[300],
+            child: const Text('Sound of screams but the'),
+          ),
+          Container(
+            color: Colors.teal[400],
+            child: const Text('Who scream'),
+          ),
+          Container(
+            color: Colors.teal[500],
+            child: const Text('Revolution is coming...'),
+          ),
+          Container(
+            color: Colors.teal[600],
+            child: const Text('Revolution, they...'),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+          Container(
+            color: Colors.teal[100],
+            child: const Text("He'd have you all unravel at the"),
+          ),
+        ],
+      )),
+    );
+  }
+}
