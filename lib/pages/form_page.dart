@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:third_app/backend/mysql_test.dart';
 import 'package:third_app/custom_widgets/gradient_text.dart';
 import '../pages/home.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class formPage extends StatefulWidget {
   final String email;
@@ -52,6 +54,16 @@ class _formPageState extends State<formPage> {
         }
       });
     });
+  }
+
+  Future<List<dynamic>> fetchTopics() async {
+    final response = await http.get(Uri.parse('http://localhost:8080/topics'));
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      return data;
+    } else {
+      throw Exception('Failed to fetch topics');
+    }
   }
 
   @override
@@ -276,7 +288,36 @@ class _formPageState extends State<formPage> {
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 18),
                                   ),
-                                )
+                                ),
+                                FutureBuilder<List<dynamic>>(
+                                  future: fetchTopics(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return CircularProgressIndicator();
+                                    } else if (snapshot.hasError) {
+                                      return Text('Error: ${snapshot.error}');
+                                    } else if (!snapshot.hasData ||
+                                        snapshot.data!.isEmpty) {
+                                      return Text('No topics found');
+                                    } else {
+                                      return ListView.builder(
+                                        shrinkWrap: true,
+                                        itemCount: snapshot.data!.length,
+                                        itemBuilder: (context, index) {
+                                          final topic = snapshot.data![index];
+                                          return Text(
+                                            topic['name'],
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.w700),
+                                          );
+                                        },
+                                      );
+                                    }
+                                  },
+                                ),
                               ],
                             ),
                           ),
