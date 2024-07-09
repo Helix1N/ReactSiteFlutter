@@ -1,2 +1,2 @@
-# ReacSite in Flutter
+# ReactSite in Flutter
 A recreation of the GPTReact design in Flutter!
